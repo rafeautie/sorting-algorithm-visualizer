@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Container } from './AppStyle';
+
+import Visualizer from './Visualizer';
+import Menu from './Menu'
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Container >
+      <Visualizer />
+      <Menu />
+    </Container>
   );
 }
 
