@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash": "^4.17.15",
+    "p5": "^0.9.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-entities": "^0.4.0",
+    "react-p5-wrapper": "^2.0.0",
     "react-scripts": "3.1.1",
     "styled-components": "^4.3.2"
   },
