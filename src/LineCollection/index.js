@@ -1,53 +1,35 @@
 import times from 'lodash/times';
-import every from 'lodash/every';
 import shuffle from 'lodash/shuffle';
-import uuidv4 from 'uuid/v4';
 
-class LineCollection extends Map {
+class LineCollection extends Array {
   constructor(input) {
-    if (Array.isArray(input)) {
-      console.log('instanceof')
-      super(input);
-      this._conformCollection();
+    if(Array.isArray(input)) {
+      super(...input);
     } else if (Number.isInteger(input)) {
-      super()
+      super();
       this._generateCollection(input);
     } else {
       super();
     }
   }
 
-  static shuffle(collection) {
-    return new LineCollection(shuffle(Array.from(collection)));
+  shuffle() {
+    return new LineCollection(shuffle(this));
   }
 
   _generateCollection(numberOfLines) {
     let h = window.innerHeight - 75;
-    let w = window.innerWidth / numberOfLines;
     
     times(numberOfLines, (i) => {
       let color = this._genColor(i + 1);
       let height = h / numberOfLines * (i + 1);
       
-      this.set(uuidv4(), { 
+      this.push({ 
         color, 
         height, 
-        width: w,
         y: h - height,
-        x: w * i,
       });
     });
-  }
-
-  _conformCollection() {
-    this.forEach((l) => {
-      let hasAllRequiredProps =
-        l.hasOwnProperty('color') &&
-        l.hasOwnProperty('height') &&
-        l.hasOwnProperty('width') &&
-        l.hasOwnProperty('y');
-      if (!hasAllRequiredProps) throw new Error("Collection items must match ");
-    })
   }
 
   _genColor(i) {
