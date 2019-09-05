@@ -7,14 +7,16 @@ export default function sketch(lines) {
 
     p.windowResized = function () {
       p.resizeCanvas(window.innerWidth, window.innerHeight - 75);
+      console.log('recalc');
       drawLines()
     }
 
     const drawLines = () => {
-      lines.forEach(({ height, width, color, x, y }) => {
+      let width = window.innerWidth / lines.length; 
+      lines.forEach(({ height, color, y }, i) => {
         p.strokeWeight(0);
         p.fill(color);
-        p.rect(x, y, width, height);
+        p.rect(width * i, y, width, height);
       })
     }
   }
