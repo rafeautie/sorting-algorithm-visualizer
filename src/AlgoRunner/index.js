@@ -15,7 +15,7 @@ export default class AlgoRunner {
     return this;
   }
 
-  capture(collectionSnapshot, [p1, p2]) {
+  capture(collectionSnapshot) {
     //mark "p1" and "p2" in "collectionSnapshot" as swapping
     this.snapshots.push(collectionSnapshot);
   }

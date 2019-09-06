@@ -1,4 +1,4 @@
-export default (array, capture) => {
+export default function*(array, capture) {
   if (!capture) capture = () => { };
 
   for (let t = 0; t < array.length - 1; t++) {
@@ -13,7 +13,8 @@ export default (array, capture) => {
         swapCount++;
       }
 
-      capture(array.slice(), [p1, p2])
+      yield array.slice()
+      // capture(array.slice())
 
     }
     if (!swapCount) break;
