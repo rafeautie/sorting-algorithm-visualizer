@@ -25,9 +25,9 @@ class LineCollection extends Array {
     let center = 128;
     let width = 127;
   
-    var r = Math.floor(Math.sin(frequency * i + 0) * width + center);
-    var g = Math.floor(Math.sin(frequency * i + 2) * width + center);
-    var b = Math.floor(Math.sin(frequency * i + 4) * width + center);
+    var r = Math.floor(Math.sin(frequency * i + 1) * width + center);
+    var g = Math.floor(Math.sin(frequency * i + 3) * width + center);
+    var b = Math.floor(Math.sin(frequency * i + 5) * width + center);
     return `rgb(${r}, ${g}, ${b})`;
   }
   
