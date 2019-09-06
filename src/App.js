@@ -9,7 +9,8 @@ function App() {
   const [numOfLines, setNumOfLines] = useState(5);
   const [lines, setLines] = useState(new LineCollection(numOfLines));
 
-  const handleNumberChange = (num) => {
+  const handleNumberChange = ({ target: { value } }) => {
+    let num = Number(value);
     setNumOfLines(num);
     setLines(new LineCollection(num));
   }
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <Container >
-      <Visualizer lines={lines} numOfLines={numOfLines}/>
+      <Visualizer lines={lines} numOfLines={numOfLines} />
       <Menu
         handleChange={handleNumberChange}
         handleShuffle={handleShuffle}
