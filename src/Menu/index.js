@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
-const Menu = ({ handleChange, handleShuffle, numOfLines }) => {
+const Menu = ({ handleChange, handleShuffle, handleRun, numOfLines }) => {
   return (
     <Container>
       <InputGroup className='ig'>
@@ -20,6 +20,10 @@ const Menu = ({ handleChange, handleShuffle, numOfLines }) => {
           >Shuffle</Button>
         </InputGroup.Append>
       </InputGroup>
+      <Button
+        variant="dark"
+        onClick={handleRun}
+      >Sort</Button>
     </Container>
   );
 }

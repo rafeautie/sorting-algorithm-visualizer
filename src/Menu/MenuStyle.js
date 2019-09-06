@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -9,7 +10,6 @@ export const Container = styled.div`
   height: 75px;
   background: white;
   z-index: 9999;
-  padding: 0 25px;
 
   .ig {
     width: 155px;
