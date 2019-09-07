@@ -6,6 +6,7 @@ class LineCollection extends Array {
   constructor(input, randomized) {
     if(Array.isArray(input)) {
       super(...input);
+      this._updateShuffleIdx()
     } else if (Number.isInteger(input)) {
       super();
       this._generateCollection(input);
@@ -43,6 +44,12 @@ class LineCollection extends Array {
 
       this.push(new Line(x, y, width, height, color, numberOfLines, i))
     });
+  }
+
+  _updateShuffleIdx() {
+    this.forEach((line, idx) => {
+      line.shuffledIdx = idx;
+    })
   }
 }
 
