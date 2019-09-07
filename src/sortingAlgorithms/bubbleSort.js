@@ -14,8 +14,6 @@ export default function*(array, capture) {
       }
 
       yield array.slice()
-      // capture(array.slice())
-
     }
     if (!swapCount) break;
   }
