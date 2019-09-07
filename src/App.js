@@ -9,7 +9,7 @@ import AlgoRunner from './AlgoRunner';
 function App() {
   const [numOfLines, setNumOfLines] = useState(5);
   const [lines, setLines] = useState(new LineCollection(numOfLines));
-  const [algoToRun, setAlgo] = useState('bubbleSort');
+  const [algoToRun, setAlgo] = useState('mergeSort');
   
   const handleNumberChange = ({ target: { value } }) => {
     let num = Number(value);

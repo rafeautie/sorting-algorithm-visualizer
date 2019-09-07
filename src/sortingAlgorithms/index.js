@@ -1,3 +1,7 @@
 import bubbleSort from './bubbleSort';
+import mergeSort from './mergeSort';
 
-export { bubbleSort };
+export {
+  bubbleSort,
+  mergeSort
+};
