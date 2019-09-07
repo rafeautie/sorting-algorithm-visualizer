@@ -8,6 +8,7 @@ export default class Line {
     this.numberOfLines = n;
     this._previousCanvasHeight = window.innerHeight - 75;
     this.i = i;
+    this.shuffledIdx = null;
   }
 
   recalculate(i) {
