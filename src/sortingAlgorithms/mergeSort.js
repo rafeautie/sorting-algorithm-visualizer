@@ -11,6 +11,4 @@ const mergeSort = function* (array, l, r) {
   }
 }
 
-window.mergeSort = mergeSort;
-
 export default mergeSort;
