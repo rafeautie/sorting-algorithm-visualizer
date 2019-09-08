@@ -1,12 +1,12 @@
 export default function sketch(lines) {
   return function (p) {
     p.setup = function () {
-      p.createCanvas(window.innerWidth, window.innerHeight - 75);
+      p.createCanvas(window.innerWidth, window.innerHeight);
       drawLines();
     };
 
     p.windowResized = function () {
-      p.resizeCanvas(window.innerWidth, window.innerHeight - 75);
+      p.resizeCanvas(window.innerWidth, window.innerHeight);
       drawLines()
     }
 
