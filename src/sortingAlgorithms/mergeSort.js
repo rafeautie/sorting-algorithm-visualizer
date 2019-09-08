@@ -1,59 +1,16 @@
-import LineCollection from "../LineCollection";
+import { merge } from './helper';
 
-const mergeSort = function* (a) {
-  if (a.length === 1) return a;
+const mergeSort = function* (array, l, r) {
+  if (l < r) {
+    let m = Math.floor(l + (r - l) / 2);
 
-  let mid = Math.ceil(a.length - 1 / 2);
-  //every merge rebuild the original array with diffs
-  yield merge(mergeSort(a.slice(0, mid)), mergeSort(a.slice(mid)));
+    yield* mergeSort(array, l, m);
+    yield* mergeSort(array, m + 1, r);
 
-  mergeSort(a);
-}
-
-const merge = (a, b) => {
-  let newCollection = new LineCollection();
-  let i = 0;
-
-  while (i < a.length && i < b.length) {
-    if (a[i].height < b[i].height) {
-      newCollection.push(a.shift());
-    } else {
-      newCollection.push(b.shift());
-    }
-    i++;
+    yield* merge(array, l, m, r);
   }
-
-  while (a.length) {
-    newCollection.push(a.shift());
-  }
-
-  while (b.length) {
-    newCollection.push(b.shift());
-  }
-
-  return newCollection;
 }
 
-//Capture merge, and bt.
-const capture = () => {
-
-}
-
-//Rebuild original array and include changes
-const rebuild = (ogArray, newArray) => {
-  //compare lengths
-    //if lengths are equal, return newArray (should be sorted at this point)
-  //else
-    //
-}
-
-const deepDiff = () => {
-
-}
+window.mergeSort = mergeSort;
 
 export default mergeSort;
-
-//1,2,3,4,5
-// 1,2,3              4,5
-//1    2,3          4     5
-//    2   3
