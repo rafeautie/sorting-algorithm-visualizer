@@ -7,21 +7,21 @@ import FormControl from '@material-ui/core/FormControl';
 const marks = {
   speed: [
     {
-      value: 5,
+      value: 0,
       label: 'Slow',
     },
     {
-      value: 95,
+      value: 1000,
       label: 'Fast',
     },
   ],
   lines: [
     {
-      value: 2,
-      label: '4',
+      value: 0,
+      label: '0',
     },
     {
-      value: 95,
+      value: 1000,
       label: '1000',
     },
   ]
@@ -33,18 +33,20 @@ const titles = {
 }
 
 
-export default ({ type, handleLineCountChange}) => {
+export default ({ type, onChangeCommitted, value, min}) => {
   return (
     <FormControl className="slider-container">
       <Typography id="discrete-slider-custom" gutterBottom>
         {titles[type]}
       </Typography>
       <Slider
-        defaultValue={50}
+        defaultValue={value}
+        max={1000}
+        min={min || 0}
         aria-labelledby="continuous-slider"
         valueLabelDisplay="auto"
         marks={marks[type]}
-        onChangeCommitted={handleLineCountChange}
+        onChangeCommitted={onChangeCommitted}
       />
     </FormControl>
   );

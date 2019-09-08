@@ -10,7 +10,7 @@ import Slider from './Slider';
 
 import { Drawer } from './DrawerStyle.js';
 
-export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, numOfLines }) => {
+export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, algoToRun, numOfLines }) => {
   const [isOpen, toggleDrawer] = useState(true);
 
   const handleClickRun = () => {
@@ -23,7 +23,7 @@ export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, numO
       <div className="half">
         <FormControl className="select">
           <Select
-            value={'mergeSort'}
+            value={algoToRun}
             onChange={setAlgo}
             input={<Input name="algo" id="algo-select" />}
           >
@@ -39,8 +39,8 @@ export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, numO
         </ButtonGroup>
       </div>
       <div className="half">
-        <Slider type="speed"/>
-        <Slider type="lines" handleLineCountChange={handleLineCountChange}/>
+        <Slider type="speed" min={1}/>
+        <Slider type="lines" onChangeCommitted={handleLineCountChange} value={numOfLines}/>
       </div>
     </Drawer>
   )
