@@ -8,7 +8,7 @@ import LineCollection from './LineCollection';
 import AlgoRunner from './AlgoRunner';
 
 function App() {
-  const [numOfLines, setNumOfLines] = useState(5);
+  const [numOfLines, setNumOfLines] = useState(50);
   const [lines, setLines] = useState(new LineCollection(numOfLines));
   const [algoToRun, setAlgo] = useState('mergeSort');
 
@@ -39,13 +39,8 @@ function App() {
         handleRun={handleRun}
         setAlgo={handleAlgoChange}
         numOfLines={numOfLines}
+        algoToRun={algoToRun}
       />
-      {/* <Menu
-        handleChange={handleNumberChange}
-        handleShuffle={handleShuffle}
-        handleRun={handleRun}
-        numOfLines={numOfLines}
-      /> */}
     </Container>
   );
 }
