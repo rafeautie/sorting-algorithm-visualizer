@@ -20,8 +20,14 @@ const Menu = ({ handleChange, handleShuffle, handleRun, numOfLines }) => {
           >Shuffle</Button>
         </InputGroup.Append>
       </InputGroup>
+
+      <FormControl as="select">
+        <option>Insertion Sort</option>
+        <option>Bubble Sort</option>
+        <option>Merge Sort</option>
+      </FormControl>
       <Button
-        variant="dark"
+        variant="primary"
         onClick={handleRun}
       >Sort</Button>
     </Container>
