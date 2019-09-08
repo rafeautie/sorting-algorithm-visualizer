@@ -11,13 +11,15 @@ export default function sketch(lines) {
     }
 
     const drawLines = () => {
-      lines.forEach((line, i) => {
+      let i = 0;
+      for (var line of lines) {
         line.recalculate(i);
 
         p.strokeWeight(0);
         p.fill(line.color);
         p.rect(line.x, line.y, line.width, line.height);
-      })
+        i++;
+      }
     }
   }
 }
