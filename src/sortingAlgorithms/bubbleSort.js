@@ -1,3 +1,5 @@
+import LineCollection from '../LineCollection';
+
 export default function*(array, capture) {
   if (!capture) capture = () => { };
 
@@ -13,15 +15,10 @@ export default function*(array, capture) {
         swapCount++;
       }
 
-      yield array.slice()
+      yield new LineCollection(array);
     }
     if (!swapCount) break;
   }
 
   return array;
 }
-
-//3,2,1
-//2,3,1
-//2,1,3
-//1,2,3
