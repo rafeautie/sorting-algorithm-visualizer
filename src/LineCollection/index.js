@@ -33,7 +33,7 @@ class LineCollection extends Array {
   }
   
   _generateCollection(numberOfLines) {
-    let canvasHeight = window.innerHeight - 75;
+    let canvasHeight = window.innerHeight;
     let width = window.innerWidth / numberOfLines;
 
     times(numberOfLines, (i) => {
