@@ -5,7 +5,7 @@ export default function* (arr, start, mid, end,) {
 
   // If the direct merge is already sorted 
   if (arr[mid].height <= arr[start2].height) {
-    yield arr;
+    yield new LineCollection(arr);
   }
 
   // Two pointers to maintain start 
