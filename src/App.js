@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Container } from './AppStyle';
 import Visualizer from './Visualizer';
 import Menu from './Menu'
+import Drawer from './Drawer'
 
 import LineCollection from './LineCollection';
 import AlgoRunner from './AlgoRunner';
 
 function App() {
-  const [numOfLines, setNumOfLines] = useState(5);
+  const [numOfLines, setNumOfLines] = useState(50);
   const [lines, setLines] = useState(new LineCollection(numOfLines));
   const [algoToRun, setAlgo] = useState('mergeSort');
   
