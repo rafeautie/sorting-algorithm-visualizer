@@ -29,7 +29,7 @@ export const Drawer = styled(MuiDrawer)`
   
   .MuiDrawer-paper {
     flex-direction: row;
-    height: 405px;
+    height: 255px;
   }
 
   .MuiSlider-mark {
