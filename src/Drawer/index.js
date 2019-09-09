@@ -10,16 +10,18 @@ import Slider from './Slider';
 
 import { Drawer } from './DrawerStyle.js';
 
-export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, algoToRun, numOfLines }) => {
-  const [isOpen, toggleDrawer] = useState(true);
-
+export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, algoToRun, numOfLines, toggleDrawer, isOpen }) => {
   const handleClickRun = () => {
     handleRun()
     toggleDrawer(false);
   }
 
   return (
-    <Drawer anchor="bottom" open={isOpen} onClose={() => { toggleDrawer(false) }}>
+    <Drawer
+      anchor="bottom"
+      open={isOpen}
+      onClose={() => { toggleDrawer(false) }}
+    >
       <div className="half">
         <FormControl className="select">
           <Select
@@ -39,8 +41,8 @@ export default ({ handleLineCountChange, handleShuffle, handleRun, setAlgo, algo
         </ButtonGroup>
       </div>
       <div className="half">
-        <Slider type="speed" min={1}/>
-        <Slider type="lines" onChangeCommitted={handleLineCountChange} value={numOfLines}/>
+        <Slider type="speed" min={1} />
+        <Slider type="lines" onChangeCommitted={handleLineCountChange} value={numOfLines} />
       </div>
     </Drawer>
   )
