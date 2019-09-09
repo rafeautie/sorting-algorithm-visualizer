@@ -1,6 +1,6 @@
 // Action creator for line collection
 // Accepts instance of line collection or num of lines to be generated.
-export default function updateLineCollection(lineCollection) {
+export default function updateLineCollectionAction(lineCollection) {
   return{
     type: 'UPDATE_LINE_COLLECTION',
     lineCollection

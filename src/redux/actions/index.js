@@ -1,3 +1,3 @@
-import updateLineCollection from './updateLineCollection';
+import updateLineCollectionAction from './updateLineCollectionAction';
 
-export { updateLineCollection };
+export { updateLineCollectionAction };
