@@ -31,6 +31,7 @@ export default function* (arr, start, mid, end,) {
       start++;
       mid++;
       start2++;
+      
       yield new LineCollection(arr);
     }
   }

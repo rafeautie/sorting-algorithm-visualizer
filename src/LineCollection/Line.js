@@ -6,15 +6,15 @@ export default class Line {
     this.height = h;
     this.color = c;
     this.numberOfLines = n;
-    this._previousCanvasHeight = window.innerHeight - 75;
+    this._previousCanvasHeight = window.innerHeight;
     this.i = i;
     this.shuffledIdx = null;
   }
 
   recalculate(i) {
-    this.height = (window.innerHeight - 75) / this.numberOfLines * (this.i + 1);
+    this.height = (window.innerHeight) / this.numberOfLines * (this.i + 1);
     this.width = window.innerWidth / this.numberOfLines;
     this.x = this.width * i;
-    this.y = (window.innerHeight - 75) - this.height;
+    this.y = (window.innerHeight) - this.height;
   }
 }
