@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Container } from './AppStyle';
-import Visualizer from './Visualizer';
+import { Visualizer } from './redux/containers';
 import Drawer from './Drawer'
 
 import LineCollection from './LineCollection';
@@ -10,6 +9,7 @@ function App() {
   const [numOfLines, setNumOfLines] = useState(50);
   const [lines, setLines] = useState(new LineCollection(numOfLines));
   const [algoToRun, setAlgo] = useState('mergeSort');
+  const [drawerIsOpen, toggleDrawer] = useState(true);
 
   const handleLineCountChange = (_, num) => {
     setNumOfLines(num);
@@ -30,8 +30,9 @@ function App() {
   }
 
   return (
-    <Container >
-      <Visualizer lines={lines} numOfLines={numOfLines} />
+    <>
+      {/* <Visualizer lines={lines} numOfLines={numOfLines} /> */}
+      <Visualizer  />
       <Drawer
         handleLineCountChange={handleLineCountChange}
         handleShuffle={handleShuffle}
@@ -39,8 +40,10 @@ function App() {
         setAlgo={handleAlgoChange}
         numOfLines={numOfLines}
         algoToRun={algoToRun}
+        toggleDrawer={toggleDrawer}
+        isOpen={drawerIsOpen}
       />
-    </Container>
+    </>
   );
 }
 
