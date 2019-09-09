@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.4.0",
+    "@material-ui/core": "^4.4.1",
     "bootstrap": "^4.3.1",
     "is-generator": "^1.0.3",
     "lodash": "^4.17.15",
@@ -12,7 +12,9 @@
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-p5-wrapper": "^2.0.0",
+    "react-redux": "^7.1.1",
     "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
     "styled-components": "^4.3.2",
     "uuid": "^3.3.3"
   },
