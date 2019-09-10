@@ -1,9 +1,9 @@
 import updateLineCollectionAction from './updateLineCollectionAction';
 import shuffleLineCollectionAction from './shuffleLineCollectionAction';
-import selectAlgorithmAction from './selectAlgorithmAction';
+import algoToRunAction from './algoToRunAction';
 
 export {
   updateLineCollectionAction,
   shuffleLineCollectionAction,
-  selectAlgorithmAction
+  algoToRunAction
 };
