@@ -5,5 +5,5 @@ workflow "Jest Runner" {
 
 action "Jest" {
   uses = "stefanoeb/jest-action@master"
-  args = "**.test.js --ci"
+  args = "--experimental-modules"
 }
