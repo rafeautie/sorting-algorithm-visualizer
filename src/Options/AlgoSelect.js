@@ -10,11 +10,13 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
+import AlgoRunner from '../AlgoRunner'
+
 export default ({
   toggleOptionsCard,
   algoToRun,
   setAlgo,
-  shuffleLineCollection
+  shuffleLineCollection,
  }) => {
 
   return (
@@ -39,7 +41,7 @@ export default ({
         </FormControl>
       </CardContent>
       <CardActions>
-        <Button color="primary" >Sort</Button>
+        <Button onClick={() => new AlgoRunner(algoToRun).run()}color="primary" >Sort</Button>
         <Button onClick={shuffleLineCollection} color="secondary" >Shuffle</Button>
         <Button onClick={toggleOptionsCard}>Options</Button>
       </CardActions>
