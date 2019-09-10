@@ -1,6 +1,7 @@
 import LineCollection from '../LineCollection';
+import { sound } from './helper'
 
-export default function*(array, capture) {
+export default function* (array, capture) {
   if (!capture) capture = () => { };
 
   for (let t = 0; t < array.length - 1; t++) {
@@ -8,6 +9,8 @@ export default function*(array, capture) {
     for (let i = 0; i < array.length - 1; i++) {
       let p1 = array[i];
       let p2 = array[i + 1];
+
+      sound(p2.height);
 
       p1.mark(true);
       p2.mark(true);
@@ -18,9 +21,6 @@ export default function*(array, capture) {
         array[i] = p2;
         array[i + 1] = p1;
         swapCount++;
-      } else {
-        p1.mark(false);
-        p2.mark(false);
       }
 
       yield new LineCollection(array);
