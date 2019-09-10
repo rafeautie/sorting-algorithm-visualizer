@@ -10,7 +10,13 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
-export default ({ toggleOptionsCard }) => {
+export default ({
+  toggleOptionsCard,
+  algoToRun,
+  setAlgo,
+  shuffleLineCollection
+ }) => {
+
   return (
     <Card raised={true}>
       <CardContent>
@@ -18,8 +24,8 @@ export default ({ toggleOptionsCard }) => {
 
         <FormControl className="select">
           <Select
-            value={'mergeSort'}
-            // onChange={setAlgo}
+            value={algoToRun}
+            onChange={(e) => setAlgo(e.target.value)}
             input={<Input name="algo" id="algo-select" />}
             MenuProps={{
               disablePortal: true,
@@ -34,7 +40,7 @@ export default ({ toggleOptionsCard }) => {
       </CardContent>
       <CardActions>
         <Button color="primary" >Sort</Button>
-        <Button color="secondary" >Shuffle</Button>
+        <Button onClick={shuffleLineCollection} color="secondary" >Shuffle</Button>
         <Button onClick={toggleOptionsCard}>Options</Button>
       </CardActions>
     </Card>

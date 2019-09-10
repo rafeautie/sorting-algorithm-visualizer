@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import lineCollection from './updateLineCollection';
-import selectAlgorithm from './selectAlgorithm';
+import lineCollection from './lineCollection';
+import algoToRun from './algoToRun';
 
 export default combineReducers({
   lineCollection,
-  selectAlgorithm,
+  algoToRun,
 })

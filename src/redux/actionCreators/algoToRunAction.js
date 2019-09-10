@@ -1,5 +1,5 @@
 
-export default function selectAlgorithmAction(algoToRun) {
+export default function algoToRunAction(algoToRun) {
   return{
     type: 'SELECT_ALGORITHM',
     algoToRun,
