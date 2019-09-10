@@ -1,12 +1,14 @@
+import store from '../redux/store';
+import { updateLineCollectionAction } from '../redux/actionCreators';
 import * as ALGOS from '../sortingAlgorithms';
 import delay from 'lodash/delay';
 
 export default class AlgoRunner {
-  constructor(lineCollection, algoToRun, setState) {
-    this.lineCollection = lineCollection;
-    this.algo = ALGOS[algoToRun](this.lineCollection, 0, lineCollection.length - 1);
-    this.setState = setState;
+  constructor(algoToRun) {
+    this.lineCollection = store.getState().lineCollection;
+    this.algo = ALGOS[algoToRun](this.lineCollection, 0, this.lineCollection.length - 1);
     this.snapshot = this.algo.next();
+    this.unsubscribe = store.subscribe(() => {})
   }
 
   run() {
@@ -15,9 +17,11 @@ export default class AlgoRunner {
 
   _startCycle() {
     if (!this.snapshot.done) {
-      this.setState(this.snapshot.value);
+      store.dispatch(updateLineCollectionAction(this.snapshot.value));
       this.snapshot = this.algo.next();
       delay(this._continueCyle.bind(this), 0);
+    } else {
+      this.unsubscribe();
     }
   }
 
