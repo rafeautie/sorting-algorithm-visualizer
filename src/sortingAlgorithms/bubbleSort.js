@@ -9,13 +9,24 @@ export default function*(array, capture) {
       let p1 = array[i];
       let p2 = array[i + 1];
 
+      p1.mark(true);
+      p2.mark(true);
+
+      yield new LineCollection(array);
+
       if (p1.height > p2.height) {
         array[i] = p2;
         array[i + 1] = p1;
         swapCount++;
+      } else {
+        p1.mark(false);
+        p2.mark(false);
       }
 
       yield new LineCollection(array);
+
+      p1.mark(false);
+      p2.mark(false);
     }
     if (!swapCount) break;
   }
