@@ -1,8 +1,15 @@
 const shuffle = require('lodash/shuffle');
 
-const bubbleSort = require('./bubbleSort');
-const mergeSort = require('./mergeSort');
-const insertionSort = require('./insertionSort');
+const { bubbleSort, mergeSort, insertionSort } = require('./index');
+// const bubbleSort = require('./bubbleSort.js');
+// const mergeSort = require('./mergeSort.js');
+// const insertionSort = require('./insertionSort.js');
+
+jest.mock('../LineCollection', () => {
+  return jest.fn().mockImplementation((arr) => {
+    return {};
+  })
+});
 
 describe('Bubble Sort', () => {
   let expected = new Array(10).fill().map((_, idx) => {
