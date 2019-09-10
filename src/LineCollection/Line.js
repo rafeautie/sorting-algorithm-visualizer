@@ -9,6 +9,7 @@ export default class Line {
     this._previousCanvasHeight = window.innerHeight;
     this.i = i;
     this.shuffledIdx = null;
+    this.isComparing = false;
   }
 
   recalculate(i) {
@@ -16,5 +17,9 @@ export default class Line {
     this.width = window.innerWidth / this.numberOfLines;
     this.x = this.width * i;
     this.y = (window.innerHeight) - this.height;
+  }
+
+  mark(isComparing) {
+    this.isComparing = isComparing;
   }
 }
