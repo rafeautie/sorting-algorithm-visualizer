@@ -1,3 +1,4 @@
 import merge from './inPlaceMerge';
+import sound from './oscillator';
 
-export { merge }
+export { merge, sound }
