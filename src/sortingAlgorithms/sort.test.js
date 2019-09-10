@@ -1,68 +1,73 @@
+import shuffle from 'lodash/shuffle';
+
 import {
   bubbleSort,
-  // mergeSort,
+  insertionSort,
+  mergeSort,
 } from './index';
 
 describe('Bubble Sort', () => {
+  let expected = new Array(10).fill().map((_, idx) => {
+    return {
+      height: idx,
+      shuffledIdx: idx
+    }
+  });
+
+  let shuffled = shuffle(expected);
+
+  let gen = bubbleSort(shuffled);
+  let isDone = false;
+
+  while (!isDone) {
+    isDone = gen.next().done;
+  }
+
   it('should sort an array', () => {
-    let shuffled = [
-      { height: 1 },
-      { height: 0 },
-      { height: 2 },
-      { height: 5 },
-      { height: 8 },
-      { height: 7 },
-      { height: 4 },
-      { height: 3 },
-      { height: 9 },
-      { height: 6 },
-    ]
-
-    let expected = [
-      { height: 0 },
-      { height: 1 },
-      { height: 2 },
-      { height: 3 },
-      { height: 4 },
-      { height: 5 },
-      { height: 6 },
-      { height: 7 },
-      { height: 8 },
-      { height: 9 },
-    ]
-
-    expect(bubbleSort(shuffled)).toEqual(expected);
+    expect(shuffled).toEqual(expected);
   })
 })
 
 describe('Merge Sort', () => {
+  let expected = new Array(10).fill().map((_, idx) => {
+    return {
+      height: idx,
+      shuffledIdx: idx
+    }
+  });
+
+  let shuffled = shuffle(expected);
+
+  let gen = mergeSort(shuffled);
+  let isDone = false;
+
+  while (!isDone) {
+    isDone = gen.next().done;
+  }
+
   it('should sort an array', () => {
-    let shuffled = [
-      { height: 1 },
-      { height: 0 },
-      { height: 2 },
-      { height: 5 },
-      { height: 8 },
-      { height: 7 },
-      { height: 4 },
-      { height: 3 },
-      { height: 9 },
-      { height: 6 },
-    ]
+    expect(shuffled).toEqual(expected);
+  })
+})
 
-    let expected = [
-      { height: 0 },
-      { height: 1 },
-      { height: 2 },
-      { height: 3 },
-      { height: 4 },
-      { height: 5 },
-      { height: 6 },
-      { height: 7 },
-      { height: 8 },
-      { height: 9 },
-    ]
+describe('Insertion Sort', () => {
+  let expected = new Array(10).fill().map((_, idx) => {
+    return {
+      height: idx,
+      shuffledIdx: idx
+    }
+  });
 
-    expect(mergeSort(shuffled)).toEqual(expected);
+  let shuffled = shuffle(expected);
+
+  let gen = insertionSort(shuffled);
+  let isDone = false;
+
+  while (!isDone) {
+    isDone = gen.next().done;
+  }
+
+  it('should sort an array', () => {
+    expect(shuffled).toEqual(expected);
   })
 })
