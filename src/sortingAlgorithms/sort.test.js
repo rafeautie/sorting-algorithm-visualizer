@@ -1,10 +1,10 @@
-import _ from 'lodash';
+const shuffle = require('lodash/shuffle');
 
-import {
+const {
   bubbleSort,
   insertionSort,
   mergeSort,
-} from './index';
+} = require('./index');
 
 describe('Bubble Sort', () => {
   let expected = new Array(10).fill().map((_, idx) => {
@@ -14,7 +14,7 @@ describe('Bubble Sort', () => {
     }
   });
 
-  let shuffled = _.shuffle(expected);
+  let shuffled = shuffle(expected);
 
   let gen = bubbleSort(shuffled);
   let isDone = false;
@@ -36,7 +36,7 @@ describe('Merge Sort', () => {
     }
   });
 
-  let shuffled = _.shuffle(expected);
+  let shuffled = shuffle(expected);
 
   let gen = mergeSort(shuffled);
   let isDone = false;
@@ -58,7 +58,7 @@ describe('Insertion Sort', () => {
     }
   });
 
-  let shuffled = _.shuffle(expected);
+  let shuffled = shuffle(expected);
 
   let gen = insertionSort(shuffled);
   let isDone = false;
