@@ -16,7 +16,7 @@ export default function sketch(lines) {
         line.recalculate(i);
 
         p.strokeWeight(0);
-        p.fill(line.color);
+        p.fill(line.isComparing ? 'yellow' : line.color);
         p.rect(line.x, line.y, line.width, line.height);
         i++;
       }
