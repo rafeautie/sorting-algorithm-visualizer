@@ -5,5 +5,5 @@ import algoToRunAction from './algoToRunAction';
 export {
   updateLineCollectionAction,
   shuffleLineCollectionAction,
-  algoToRunAction
+  algoToRunAction,
 };
