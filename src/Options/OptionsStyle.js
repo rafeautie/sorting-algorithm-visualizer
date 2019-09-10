@@ -21,4 +21,12 @@ export const Container = styled.div`
   .sliders {
     margin-top: 10px;
   }
+
+  .up-arrow {
+    position: absolute;
+    right: 33px;
+    top: 159px;
+    color: white;
+    font-size: 2em;
+  }
 `;
