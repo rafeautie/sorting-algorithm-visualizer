@@ -1,4 +1,4 @@
-import shuffle from 'lodash/shuffle';
+import _ from 'lodash';
 
 import {
   bubbleSort,
@@ -14,7 +14,7 @@ describe('Bubble Sort', () => {
     }
   });
 
-  let shuffled = shuffle(expected);
+  let shuffled = _.shuffle(expected);
 
   let gen = bubbleSort(shuffled);
   let isDone = false;
@@ -36,7 +36,7 @@ describe('Merge Sort', () => {
     }
   });
 
-  let shuffled = shuffle(expected);
+  let shuffled = _.shuffle(expected);
 
   let gen = mergeSort(shuffled);
   let isDone = false;
@@ -58,7 +58,7 @@ describe('Insertion Sort', () => {
     }
   });
 
-  let shuffled = shuffle(expected);
+  let shuffled = _.shuffle(expected);
 
   let gen = insertionSort(shuffled);
   let isDone = false;
