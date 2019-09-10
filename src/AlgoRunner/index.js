@@ -4,11 +4,12 @@ import * as ALGOS from '../sortingAlgorithms';
 import delay from 'lodash/delay';
 
 export default class AlgoRunner {
-  constructor(algoToRun) {
+  constructor(algoToRun, done) {
     this.lineCollection = store.getState().lineCollection;
     this.algo = ALGOS[algoToRun](this.lineCollection, 0, this.lineCollection.length - 1);
     this.snapshot = this.algo.next();
     this.unsubscribe = store.subscribe(() => {})
+    this.done = done;
   }
 
   run() {
@@ -21,6 +22,7 @@ export default class AlgoRunner {
       this.snapshot = this.algo.next();
       delay(this._continueCyle.bind(this), 0);
     } else {
+      this.done();
       this.unsubscribe();
     }
   }
