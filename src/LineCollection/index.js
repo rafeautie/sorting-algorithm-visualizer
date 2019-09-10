@@ -13,7 +13,6 @@ class LineCollection extends Array {
     } else {
       super();
     }
-    
     this.isRandom = randomized;
   }
 
@@ -50,6 +49,7 @@ class LineCollection extends Array {
     this.forEach((line, idx) => {
       line.shuffledIdx = idx;
     })
+    return this;
   }
 }
 
