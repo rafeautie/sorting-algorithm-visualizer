@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AlgoSelect from './AlgoSelect';
+import { AlgoSelect } from '../redux/containers';
 import SliderCard from './SliderCard';
 import { Container } from './OptionsStyle';
 
@@ -12,11 +12,11 @@ export default () => {
 
   return (
     <Container>
-      <AlgoSelect toggleOptionsCard={toggleOptionsCard}/>
+      <AlgoSelect toggleOptionsCard={toggleOptionsCard} />
       {
         optionsVisible
-        ? <SliderCard />
-        : null
+          ? <SliderCard />
+          : null
       }
     </Container>
   );
