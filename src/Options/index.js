@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AlgoSelect } from '../redux/containers';
-import SliderCard from './SliderCard';
+import { SliderCard } from '../redux/containers';
 import { Container } from './OptionsStyle';
 
 export default () => {
