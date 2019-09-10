@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 import AlgoRunner from '../AlgoRunner';
+import * as ALGOS from '../sortingAlgorithms';
 
 export default ({
   setAlgo,
@@ -28,6 +29,13 @@ export default ({
     }).run()
   }
 
+  let algoNames = [];
+  for (let key in ALGOS) {
+    let og = key;
+    let normalizedString = key.replace(/([A-Z])/g, ' $1').replace(/^./, function (str) { return str.toUpperCase(); })
+    algoNames.push([normalizedString, og]);
+  }
+
   return (
     <Card raised={true}>
       <CardContent>
@@ -42,9 +50,7 @@ export default ({
               disablePortal: true,
             }}
           >
-            <MenuItem value={'mergeSort'}>Merge Sort</MenuItem>
-            <MenuItem value={'insertionSort'}>Insertion Sort</MenuItem>
-            <MenuItem value={'bubbleSort'}>Bubble Sort</MenuItem>
+            {algoNames.map((t) => <MenuItem value={t[1]}>{t[0]}</MenuItem>)}
           </Select>
           <FormHelperText>Choose an algorithm.</FormHelperText>
         </FormControl>
