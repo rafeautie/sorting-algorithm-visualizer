@@ -8,7 +8,6 @@ export default class AlgoRunner {
     this.lineCollection = store.getState().lineCollection;
     this.algo = ALGOS[algoToRun](this.lineCollection, 0, this.lineCollection.length - 1);
     this.snapshot = this.algo.next();
-    this.unsubscribe = store.subscribe(() => {})
     this.done = done;
   }
 
@@ -23,7 +22,6 @@ export default class AlgoRunner {
       delay(this._continueCyle.bind(this), 0);
     } else {
       this.done();
-      this.unsubscribe();
     }
   }
 
