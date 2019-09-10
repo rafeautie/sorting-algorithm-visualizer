@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Container } from './AppStyle';
 import Visualizer from './Visualizer';
-import Drawer from './Drawer'
+import Options from './Options'
 
 import LineCollection from './LineCollection';
 import AlgoRunner from './AlgoRunner';
 
 function App() {
   const [numOfLines, setNumOfLines] = useState(50);
-  const [lines, setLines] = useState(new LineCollection(numOfLines));
+  const [lines, setLines] = useState(new LineCollection(numOfLines).shuffle());
   const [algoToRun, setAlgo] = useState('mergeSort');
 
   const handleLineCountChange = (_, num) => {
@@ -31,15 +31,8 @@ function App() {
 
   return (
     <Container >
+      <Options />
       <Visualizer lines={lines} numOfLines={numOfLines} />
-      <Drawer
-        handleLineCountChange={handleLineCountChange}
-        handleShuffle={handleShuffle}
-        handleRun={handleRun}
-        setAlgo={handleAlgoChange}
-        numOfLines={numOfLines}
-        algoToRun={algoToRun}
-      />
     </Container>
   );
 }
