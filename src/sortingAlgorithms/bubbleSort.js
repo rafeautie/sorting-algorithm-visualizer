@@ -18,9 +18,6 @@ export default function*(array, capture) {
         array[i] = p2;
         array[i + 1] = p1;
         swapCount++;
-      } else {
-        p1.mark(false);
-        p2.mark(false);
       }
 
       yield new LineCollection(array);
