@@ -1,9 +1,7 @@
 import p5 from 'p5';
 import 'p5/lib/addons/p5.sound';
 
+
 export default (freq) => {
-  let osc = new p5.Oscillator();
-  osc.setType('sine');
-  osc.start(0, freq);
-  osc.stop(100);
+  new p5.MonoSynth().play(freq, 0.5, 0, 0.01);
 }
