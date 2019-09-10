@@ -38,7 +38,7 @@ describe('Merge Sort', () => {
 
   let shuffled = shuffle(expected);
 
-  let gen = mergeSort(shuffled);
+  let gen = mergeSort(shuffled, 0, expected.length - 1);
   let isDone = false;
 
   while (!isDone) {
