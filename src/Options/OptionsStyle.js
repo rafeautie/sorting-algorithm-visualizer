@@ -13,4 +13,12 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
+
+  .select {
+    width: 100%;
+  }
+
+  .sliders {
+    margin-top: 10px;
+  }
 `;

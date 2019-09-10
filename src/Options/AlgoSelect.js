@@ -10,37 +10,34 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
-import { Container } from './OptionsStyle';
-
-export default () => {
+export default ({ toggleOptionsCard }) => {
   return (
-    <Container>
-      <Card raised={true}>
-        <CardContent>
-          <Typography color="textSecondary" gutterBottom>Options</Typography>
+    <Card raised={true}>
+      <CardContent>
+        <Typography color="textSecondary" gutterBottom>Algorithm</Typography>
 
-          <FormControl className="select">
-            <Select
-              value={'mergeSort'}
-              // onChange={setAlgo}
-              input={<Input name="algo" id="algo-select" />}
-              MenuProps={{
-                disablePortal: true,
-              }}
-            >
-              <MenuItem value={'mergeSort'}>Merge Sort</MenuItem>
-              <MenuItem value={'insertionSort'}>Insertion Sort</MenuItem>
-              <MenuItem value={'bubbleSort'}>Bubble Sort</MenuItem>
-            </Select>
-            <FormHelperText>Choose a sorting algorithm.</FormHelperText>
-          </FormControl>
-        </CardContent>
-        <CardActions>
-          <Button color="primary" >Sort</Button>
-          <Button color="secondary" >Shuffle</Button>
-        </CardActions>
-      </Card>
-    </Container>
+        <FormControl className="select">
+          <Select
+            value={'mergeSort'}
+            // onChange={setAlgo}
+            input={<Input name="algo" id="algo-select" />}
+            MenuProps={{
+              disablePortal: true,
+            }}
+          >
+            <MenuItem value={'mergeSort'}>Merge Sort</MenuItem>
+            <MenuItem value={'insertionSort'}>Insertion Sort</MenuItem>
+            <MenuItem value={'bubbleSort'}>Bubble Sort</MenuItem>
+          </Select>
+          <FormHelperText>Choose an algorithm.</FormHelperText>
+        </FormControl>
+      </CardContent>
+      <CardActions>
+        <Button color="primary" >Sort</Button>
+        <Button color="secondary" >Shuffle</Button>
+        <Button onClick={toggleOptionsCard}>Options</Button>
+      </CardActions>
+    </Card>
   );
 
 }
