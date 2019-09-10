@@ -3,15 +3,22 @@ import Slider from '@material-ui/core/Slider';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
-export default () => {
+export default ({ isRunning, lineCount, updateLineCount, setNewLineCollectionBaseOnLineCount }) => {
   return (
     <Card className="sliders">
+      <ArrowDropUpIcon className="up-arrow" />
       <CardContent >
-        <Typography color="textSecondary" gutterBottom>Options</Typography>
-
         <CustomSlider type="speed" min={1} />
-        <CustomSlider type="lines" min={5} max={1000}/>
+        <CustomSlider
+          disabled={isRunning}
+          onChange={updateLineCount}
+          onChangeCommitted={setNewLineCollectionBaseOnLineCount}
+          value={lineCount}
+          type="lines"
+          min={5}
+          max={1000} />
       </CardContent>
     </Card>
   );
@@ -23,19 +30,18 @@ const titles = {
   lines: 'Lines'
 }
 
-const CustomSlider = ({ type, onChangeCommitted, value, min, max }) => {
+const CustomSlider = (props) => {
   return (
     <>
       <Typography id="discrete-slider-custom" gutterBottom>
-        {titles[type]}
+        {titles[props.type]}
       </Typography>
       <Slider
-        // defaultValue={value}
-        max={max || 100}
-        min={min || 0}
+        {...props}
+        max={props.max || 100}
+        min={props.min || 0}
         aria-labelledby="continuous-slider"
         valueLabelDisplay="auto"
-        // onChangeCommitted={onChangeCommitted}
       />
     </>
   );
