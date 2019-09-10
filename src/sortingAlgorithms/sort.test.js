@@ -1,10 +1,8 @@
 const shuffle = require('lodash/shuffle');
 
-const {
-  bubbleSort,
-  insertionSort,
-  mergeSort,
-} = require('./index');
+const bubbleSort = require('./bubbleSort');
+const mergeSort = require('./mergeSort');
+const insertionSort = require('./insertionSort');
 
 describe('Bubble Sort', () => {
   let expected = new Array(10).fill().map((_, idx) => {
