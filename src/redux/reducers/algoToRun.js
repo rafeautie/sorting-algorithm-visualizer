@@ -1,4 +1,4 @@
-const initialState = 'mergeSort';
+const initialState = 'bubbleSort';
 
 const algoToRun = (state = initialState, action) => {
   switch (action.type) {
