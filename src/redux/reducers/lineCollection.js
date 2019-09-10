@@ -7,7 +7,7 @@ const updateLineCollection = (state = initialState, action) => {
     case 'UPDATE_LINE_COLLECTION':
       return action.lineCollection;
     case 'SHUFFLE_LINE_COLLECTION':
-      return action.lineCollection.shuffle();
+      return state.shuffle();
     default:
       return state;
   }
