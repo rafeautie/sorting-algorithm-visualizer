@@ -5,12 +5,17 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
-export default ({ isRunning, lineCount, updateLineCount, setNewLineCollectionBaseOnLineCount }) => {
+export default ({ isRunning, lineCount, updateLineCount, setNewLineCollectionBaseOnLineCount, speed, setSpeed }) => {
   return (
     <Card className="sliders">
       <ArrowDropUpIcon className="up-arrow" />
       <CardContent >
-        <CustomSlider type="speed" min={1} />
+        <CustomSlider
+          onChange={setSpeed}
+          type="speed"
+          value={speed}
+          min={1}
+        />
         <CustomSlider
           disabled={isRunning}
           onChange={updateLineCount}
@@ -18,7 +23,8 @@ export default ({ isRunning, lineCount, updateLineCount, setNewLineCollectionBas
           value={lineCount}
           type="lines"
           min={5}
-          max={1000} />
+          max={1000}
+        />
       </CardContent>
     </Card>
   );
