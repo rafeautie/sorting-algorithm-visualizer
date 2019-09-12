@@ -4,7 +4,7 @@ import shuffle from 'lodash/shuffle';
 
 class LineCollection extends Array {
   constructor(input, randomized) {
-    if(Array.isArray(input)) {
+    if (Array.isArray(input)) {
       super(...input);
       this._updateShuffleIdx()
     } else if (Number.isInteger(input)) {
@@ -19,18 +19,18 @@ class LineCollection extends Array {
   shuffle() {
     return new LineCollection(shuffle(this));
   }
-  
+
   calcColor(i) {
     let frequency = .060;
     let center = 128;
     let width = 127;
-  
+
     var r = Math.floor(Math.sin(frequency * i + 1) * width + center);
     var g = Math.floor(Math.sin(frequency * i + 3) * width + center);
     var b = Math.floor(Math.sin(frequency * i + 5) * width + center);
     return `rgb(${r}, ${g}, ${b})`;
   }
-  
+
   _generateCollection(numberOfLines) {
     let canvasHeight = window.innerHeight;
     let width = window.innerWidth / numberOfLines;
