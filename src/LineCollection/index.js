@@ -3,7 +3,7 @@ import times from 'lodash/times';
 import shuffle from 'lodash/shuffle';
 
 class LineCollection extends Array {
-  constructor(input, randomized) {
+  constructor(input) {
     if (Array.isArray(input)) {
       super(...input);
       this._updateShuffleIdx()
@@ -13,7 +13,15 @@ class LineCollection extends Array {
     } else {
       super();
     }
-    this.isRandom = randomized;
+
+    this.proxyHandler = {
+      set: (lineCollection, idx, value) => {
+        lineCollection[idx] = value;
+        return value;
+      }
+    }
+
+    return new Proxy(this, this.proxyHandler);
   }
 
   shuffle() {
