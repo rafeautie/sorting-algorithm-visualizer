@@ -1,3 +1,4 @@
+// import { partition } from './helper';
 import LineCollection from '../LineCollection';
 
 function* quickSort(a, l, h) {
@@ -6,10 +7,10 @@ function* quickSort(a, l, h) {
   let p;
 
   if (l < h) {
-      yield* partition(a, l, h);
+    yield* partition(l, h);
 
-      yield* quickSort(a, l, p - 1)
-      yield* quickSort(a, p + 1, h)
+    yield* quickSort(a, l, p - 1)
+    yield* quickSort(a, p + 1, h)
   }
 
   function* partition(l, h) {
@@ -29,7 +30,6 @@ function* quickSort(a, l, h) {
   
     p = i + 1;
   }
-
 }
 
 export default quickSort;
