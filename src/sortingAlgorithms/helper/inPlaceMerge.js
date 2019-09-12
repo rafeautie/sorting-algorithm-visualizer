@@ -1,6 +1,6 @@
 import LineCollection from '../../LineCollection';
 
-export default function* (arr, start, mid, end,) {
+export default function* (arr, start, mid, end) {
   let start2 = mid + 1;
 
   // If the direct merge is already sorted 
