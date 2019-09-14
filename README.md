@@ -133,4 +133,4 @@ __A__: I wanted to gain a deeper understanding of sorting algorithms. This proje
 
 ---
 
-<a name="f1"><sup>**</sup></a> This step only occurs in the constructor
+<sup><a name="f1">**</a></sup> This step only occurs in the constructor
