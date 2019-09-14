@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: fixed;
-  margin: 10px;
   z-index: 2;
-
+  
   .MuiCard-root {
+    margin: 10px;
     opacity: 0.6;
     transition: opacity 0.4s;
 
@@ -19,13 +19,12 @@ export const Container = styled.div`
   }
 
   .sliders {
-    margin-top: 10px;
   }
 
   .up-arrow {
     position: absolute;
-    right: 33px;
-    top: 159px;
+    right: 42px;
+    top: 168px;
     color: white;
     font-size: 2em;
   }

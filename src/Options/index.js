@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AlgoSelect } from '../redux/containers';
 import { SliderCard } from '../redux/containers';
 import { Container } from './OptionsStyle';
+import Stats from './Stats';
 
 export default () => {
   const [optionsVisible, toggleOptions] = useState(false)
@@ -18,6 +19,7 @@ export default () => {
           ? <SliderCard />
           : null
       }
+      <Stats />
     </Container>
   );
 }
