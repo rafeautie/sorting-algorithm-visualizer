@@ -10,7 +10,7 @@ export default function* (a) {
     for (let j = i + 1; j < len; j++) {
       if (a[j].height < a[min].height) min = j;
     }
-
+    
     [a[i], a[min]] = [a[min], a[i]];
     yield new LineCollection(a);
   }
