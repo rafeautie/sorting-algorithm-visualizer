@@ -82,7 +82,7 @@ First, let me explain a key piece of how the sorting algorithms are implemented[
 *Generator functions save the day!* In short, a Generator is a function you can pause and come back to at anytime. This allowed me to implement a lazy sorting mechanism.
 
 #### The process:
-1. Get generator.[^1]
+1. Get generator.[1](#1-This-step-only-occurs-in-the-constructor)
 1. Initial `next()` call to retrieve first slice to be rerenderd.[^1]
 1. Subscribe to redux store to listen for speed changes.[^1]
 1. Dispatch new slice to redux store. **This kicks off the render.**
@@ -129,4 +129,4 @@ __A__: I wanted to gain a deeper understanding of sorting algorithms. This proje
 
 ---
 
-[^1]: This step only occurs in the constructor.
+###### 1 This step only occurs in the constructor
