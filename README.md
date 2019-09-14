@@ -77,14 +77,18 @@ The [AlgoRunner Class](https://github.com/rafeautie/sorting-algorithm-visualizer
 See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/AlgoRunner/index.js).
 
 ### Lazy Sort
-First, let me explain a key piece of how the sorting algorithms are implemented[*](#Requirements). Every sorting algorithm is implemented using Generator functions. Before I explain why, I will explain what lead me to this implementation. The original implementation would perform the sort and collect slices of the sorting proccess to later be rerendered. This, all before a single rerender occurred. The queued up slices would then be dequeued at an adjustable rate. This is where the rerendering would begin. This worked well for small collections but once the size increased it would appear to the user that the application was frozen. This was not acceptable.
+First, let me explain a key piece of how the sorting algorithms are implemented[*](#Requirements). Every sorting algorithm is implemented using Generator functions. 
+
+Before I explain why, I will explain what lead me to this implementation. 
+
+The original implementation would perform the sort and collect slices of the sorting proccess to later be rerendered. This, all before a single rerender occurred. The queued up slices would then be dequeued at an adjustable rate. This is where the rerendering would begin. This worked well for small collections but once the size increased it would appear to the user that the application was frozen. This was not acceptable.
 
 *Generator functions save the day!* In short, a Generator is a function you can pause and come back to at anytime. This allowed me to implement a lazy sorting mechanism.
 
 #### The process:
-1. Get generator. <sup>[1](#f1)</sup>
-1. Initial `next()` call to retrieve first slice to be rerenderd.[^1]
-1. Subscribe to redux store to listen for speed changes.[^1]
+1. Get generator. <sup>[**](#f1)</sup>
+1. Initial `next()` call to retrieve first slice to be rerenderd.<sup>[**](#f1)</sup>
+1. Subscribe to redux store to listen for speed changes.<sup>[**](#f1)</sup>
 1. Dispatch new slice to redux store. **This kicks off the render.**
 1. Subsequent next invokation to retrieve next slice of the sort. **To be rerendered.**
 1. Invoke `_continueCycle()` with delay of `this.speed`.
@@ -129,4 +133,4 @@ __A__: I wanted to gain a deeper understanding of sorting algorithms. This proje
 
 ---
 
-<a name="f1">1</a>: Footnote content goes here
+<a name="f1"><sup>**</sup></a>: This step only occurs in the constructor
