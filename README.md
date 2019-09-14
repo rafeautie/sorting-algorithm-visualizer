@@ -82,9 +82,9 @@ First, let me explain a key piece of how the sorting algorithms are implemented[
 *Generator functions save the day!* In short, a Generator is a function you can pause and come back to at anytime. This allowed me to implement a lazy sorting mechanism.
 
 #### The process:
-1. Get generator. [**](#**)
-1. Initial `next()` call to retrieve first slice to be rerenderd.[**](#**)
-1. Subscribe to redux store to listen for speed changes.[**](#**)
+1. Get generator. [**](#Footnote-#2)
+1. Initial `next()` call to retrieve first slice to be rerenderd.[**](#Footnote-#2)
+1. Subscribe to redux store to listen for speed changes.[**](#Footnote-#2)
 1. Dispatch new slice to redux store. **This kicks off the render.**
 1. Subsequent next invokation to retrieve next slice of the sort. **To be rerendered.**
 1. Invoke `_continueCycle()` with delay of `this.speed`.
@@ -127,4 +127,4 @@ __A__: I wanted to gain a deeper understanding of sorting algorithms. This proje
 >__Q: How many algorithms are you going to implement?__\
 >__A__: I'm aiming for all of [these](https://www.bigocheatsheet.com/#sorting).
 
-###### ** This step only occurs in the constructor.
+###### Footnote #2 This step only occurs in the constructor.
