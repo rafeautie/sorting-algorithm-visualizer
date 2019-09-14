@@ -11,6 +11,12 @@ Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](ht
 
 ### LineCollection
 
+The [LineCollection Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js) is an extension of the built-in [Array Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). It adds methods that are vital to the funcationality of the app. 
+
+I needed the structure of the Array with added functionality.
+
+[Source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js)
+
 ### AlgoRunner
 
 ### SortingAlgorithms
