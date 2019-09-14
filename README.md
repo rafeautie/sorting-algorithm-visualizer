@@ -13,28 +13,42 @@ Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](ht
 
 The [LineCollection Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js) is an extension of the built-in [Array Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). It adds methods that are vital to the funcationality of the app.
 
+[Source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js)
+
 ### Public Methods:
-#### Shuffle
-`LineCollection.shuffle()`\
+#### shuffle()
+```javascript
+LineCollection.shuffle()
+```
 Shuffles `this` (the instance of the LineCollection).
 
-`LineCollection.calcColor()`\
+---
+#### calcColor()
+```javascript
+LineCollection.calcColor()
+```
 Generates rgb value based on `i`.
 
+---
+
 #### Private Methods:
+#### _generateCollection()
 ```javascript
 LineCollection._generateCollection()
 ```
 Generates collection of [Line Objects](#Line).\
 *Invoked in constructor when integer is passed in.*
+
+---
+#### _updateShuffleIdx()
 ```javascript
 LineCollection._updateShuffleIdx()
 ```
 Iterates over `this` and updates the shuffledIdx property of each [Line](#Line).\
 *Invoked in constructor when Array or LineCollection is passed in.*
 
+---
 
-[Source for LineCollection](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js)
 
 ### Line
 
