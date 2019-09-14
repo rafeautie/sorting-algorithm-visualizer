@@ -1,34 +1,23 @@
-// import { partition } from './helper';
-import LineCollection from '../LineCollection';
+import { partition } from './helper';
 
 function* quickSort(a, l, h) {
   l = l || 0;
   h = h || a.length - 1;
-  let p;
 
   if (l < h) {
-    yield* partition(l, h);
+    let p;
+    let gen = partition(a, l, h);
+    let genYield = gen.next();
 
-    yield* quickSort(a, l, p - 1)
-    yield* quickSort(a, p + 1, h)
-  }
-
-  function* partition(l, h) {
-    let piv = a[h];
-    let i = l - 1;
-  
-    for(let j = l; j < h - 1; j++) {
-        if(a[j].height <= piv.height) {
-            i += 1;
-            [a[i], a[j]] = [a[j], a[i]];
-            yield new LineCollection(a);
-        }
+    while (!genYield.done) {
+      yield genYield.value;
+      genYield = gen.next();
     }
-  
-    [a[i + 1], a[h]] = [a[h], a[i + 1]]
-    yield new LineCollection(a);
-  
-    p = i + 1;
+
+    p = genYield.value;
+
+    yield* quickSort(a, l, p - 1);
+    yield* quickSort(a, p + 1, h);
   }
 }
 
