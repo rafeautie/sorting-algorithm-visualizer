@@ -72,7 +72,7 @@ Line.unmark()
 ---
 ## AlgoRunner
 
-The [AlgoRunner Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/AlgoRunner/index.js) is the mechanism that runs the sorting algorithm. It implements a "lazy sort" system ([more](#Lazy_Sort) on that later). It allows you to control the speed that the given sorting algorithm runs at.
+The [AlgoRunner Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/AlgoRunner/index.js) is the mechanism that runs the sorting algorithm. It implements a "lazy sort" system ([more](#Lazy-Sort) on that later). It allows you to control the speed that the given sorting algorithm runs at.
 
 See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/AlgoRunner/index.js).
 
