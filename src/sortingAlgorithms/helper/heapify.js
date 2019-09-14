@@ -1,5 +1,3 @@
-import LineCollection from '../../LineCollection';
-
 export default function* heapify(a, n, i) {
   let largest = i;
   let l = 2 * i + 1;
