@@ -18,7 +18,8 @@ export const Container = styled.div`
     width: 100%;
   }
 
-  .sliders {
+  .stats .MuiCardContent-root {
+    padding-bottom: 16px;
   }
 
   .up-arrow {
