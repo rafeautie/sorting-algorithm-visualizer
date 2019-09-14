@@ -1,9 +1,9 @@
 import merge from './inPlaceMerge';
 import partition from './inPlacePartition';
-import Heap from './Heap';
+import heapify from './heapify';
 
 export {
-  Heap,
+  heapify,
   merge,
   partition,
 }
