@@ -15,7 +15,7 @@ export default class AlgoRunner {
     this.unsubscribe = store.subscribe(() => {
       let s = store.getState().speed
       this.speed = 1000 - (s / 10 * 100);
-    })
+    });
   }
 
   run() {
