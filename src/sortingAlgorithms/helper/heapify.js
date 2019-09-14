@@ -15,7 +15,7 @@ export default function* heapify(a, n, i) {
 
   if (largest !== i) {
     [a[largest], a[i]] = [a[i], a[largest]];
-    yield new LineCollection(a);
+    // yield new LineCollection(a);
     yield* heapify(a, n, largest);
   }
 }
