@@ -2,7 +2,6 @@ import LineCollection from '../LineCollection';
 
 export default function* (a) {
   let len = a.length;
-  debugger;
 
   for (let i = 0; i < len; i++) {
     let min = i;
