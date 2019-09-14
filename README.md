@@ -7,7 +7,7 @@ Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](ht
 1. [Sorting Algorithms](#SortingAlgorithms)
 
 
-## How does it work?
+## How stuff works?
 
 ### LineCollection
 
@@ -17,41 +17,64 @@ The [LineCollection Class](https://github.com/rafeautie/sorting-algorithm-visual
 
 #### Public Methods:
 #### shuffle()
+Shuffles `this` (the instance of the LineCollection).
 ```javascript
 LineCollection.shuffle()
 ```
-Shuffles `this` (the instance of the LineCollection).
 
 ---
 #### calcColor()
+Generates rgb value based on `i`.
 ```javascript
 LineCollection.calcColor()
 ```
-Generates rgb value based on `i`.
 
 ---
-
 #### Private Methods:
 #### _generateCollection()
+Generates collection of [Line Objects](#Line).
 ```javascript
 LineCollection._generateCollection()
 ```
-Generates collection of [Line Objects](#Line).\
-*Invoked in constructor when integer is passed in.*
+###### *Invoked in constructor when integer is passed in.*
 
 ---
 #### _updateShuffleIdx()
+Iterates over `this` and updates the shuffledIdx property of each [Line](#Line).
 ```javascript
 LineCollection._updateShuffleIdx()
 ```
-Iterates over `this` and updates the shuffledIdx property of each [Line](#Line).\
-*Invoked in constructor when Array or LineCollection is passed in.*
+###### *Invoked in constructor when Array or LineCollection is passed in.*
 
 ---
 
-
 ### Line
+The **Line Class** represents a single line.
 
+See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/Line.js).
+
+#### Public Methods:
+#### recalculate(i)
+Recalculates the height, width, x and y properties of `this` (instance of Line).
+```javascript
+Line.recalculate(i)
+```
+
+---
+#### mark()
+Sets the `Line.isComparing` property to `true`. When `Line.isComparing === true` the line will render yellow. You must unmark the line to revert it to its original color.
+```javascript
+Line.mark()
+```
+
+---
+#### unmark()
+Sets the `Line.isComparing` property to `false`. When `Line.isComparing === false` the line will render its original color.
+```javascript
+Line.unmark()
+```
+
+---
 ### AlgoRunner
 
 ### SortingAlgorithms
