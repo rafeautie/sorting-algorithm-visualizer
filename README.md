@@ -9,13 +9,14 @@ Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](ht
 
 ## How stuff works?
 
-### LineCollection
+## LineCollection
 
 The [LineCollection Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js) is an extension of the built-in [Array Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). It adds methods that are vital to the functionality of the app.
 
 [Source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js)
 
-### Public Methods:
+### Methods:
+
 #### shuffle()
 Shuffles `this` (the instance of the LineCollection).
 ```javascript
@@ -28,7 +29,6 @@ Generates rgb value based on `i`.
 LineCollection.calcColor()
 ```
 
-### Private Methods:
 #### _generateCollection()
 Generates collection of [Line Objects](#Line).
 ```javascript
@@ -45,7 +45,7 @@ LineCollection._updateShuffleIdx()
 
 ---
 
-### Line
+## Line
 The **Line Class** represents a single line.
 
 See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/Line.js).
@@ -70,9 +70,9 @@ Line.unmark()
 ```
 
 ---
-### AlgoRunner
+## AlgoRunner
 
-### SortingAlgorithms
+## SortingAlgorithms
 ---
 
 > ## F.A.Q
