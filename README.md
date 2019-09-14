@@ -86,13 +86,15 @@ The original implementation would perform the sort and collect slices of the sor
 *Generator functions save the day!* In short, a Generator is a function you can pause and come back to at anytime. This allowed me to implement a lazy sorting mechanism.
 
 #### The process:
-1. Get generator. <sup>[**](#f1)</sup>
-1. Initial `next()` call to retrieve first slice to be rerenderd.<sup>[**](#f1)</sup>
-1. Subscribe to redux store to listen for speed changes.<sup>[**](#f1)</sup>
-1. Dispatch new slice to redux store. **This kicks off the render.**
-1. Subsequent next invokation to retrieve next slice of the sort. **To be rerendered.**
-1. Invoke `_continueCycle()` with delay of `this.speed`.
-1. Rinse and repeat.
+1. Constructor:
+    1. Get generator. <sup>[**](#f1)</sup>
+    1. Initial `next()` call to retrieve first slice to be rerenderd.<sup>[**](#f1)</sup>
+    1. Subscribe to redux store to listen for speed changes.<sup>[**](#f1)</sup>
+1. Run:
+    1. Dispatch new slice to redux store. **This kicks off the render.**
+    1. Subsequent next invokation to retrieve next slice of the sort. **To be rerendered.**
+    1. Invoke `_continueCycle()` with delay of `this.speed`.
+    1. Rinse and repeat.
 
 ### Methods
 #### run()
