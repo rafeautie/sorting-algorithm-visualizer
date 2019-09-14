@@ -1,3 +1,5 @@
+import store from '../redux/store';
+import { incrementComparisonCount, incrementSwapCount } from '../redux/actionCreators'
 import Line from './Line';
 import times from 'lodash/times';
 import shuffle from 'lodash/shuffle';
@@ -13,6 +15,21 @@ class LineCollection extends Array {
     } else {
       super();
     }
+
+    //Stat tracking.
+    return new Proxy(this, {
+      get: (lineCollection, idx) => {
+        // dispatch action to increment comparison count
+        setTimeout(() => store.dispatch(incrementComparisonCount()), 0);
+        return lineCollection[idx];
+      },
+      set: (lineCollection, idx, line) => {
+        // dispatch action to increment swap count
+        lineCollection[idx] = line;
+        setTimeout(() => store.dispatch(incrementSwapCount()), 0);
+        return lineCollection[idx];
+      }
+    });
   }
 
   shuffle() {
