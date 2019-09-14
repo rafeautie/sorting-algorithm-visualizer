@@ -4,7 +4,7 @@ import { heapify } from './helper';
 export default function* (a) {
   let n = a.length;
 
-  for (let i = n / 2 - 1; i >= 0; i--) {
+  for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
     yield* heapify(a, n, i);
   }
 
