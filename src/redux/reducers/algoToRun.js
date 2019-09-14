@@ -1,4 +1,4 @@
-const initialState = 'bubbleSort';
+const initialState = 'quickSort';
 
 const algoToRun = (state = initialState, action) => {
   switch (action.type) {
