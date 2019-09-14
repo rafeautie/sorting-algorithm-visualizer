@@ -23,10 +23,10 @@ Shuffles `this` (the instance of the LineCollection).
 LineCollection.shuffle()
 ```
 
-#### calcColor()
+#### calcColor(i)
 Generates rgb value based on `i`.
 ```javascript
-LineCollection.calcColor()
+LineCollection.calcColor(i)
 ```
 
 #### _generateCollection()
