@@ -13,7 +13,7 @@ Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](ht
 
 The [LineCollection Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js) is an extension of the built-in [Array Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). It adds methods that are vital to the functionality of the app.
 
-[Source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js)
+See [Source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/index.js).
 
 ### Methods:
 
@@ -71,7 +71,7 @@ Line.unmark()
 
 ---
 ## AlgoRunner
-> Coming soon...
+The [AlgoRunner Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/AlgoRunner/index.js) is the mechanism that runs the sorting algorithm. It works using a "lazy sort" (more on that later). It allows you to control the speed that the given sorting algorithm runs at. It implements a relatively straight forward system.
 ---
 ## SortingAlgorithms
 > Implementing your own... coming soon...
