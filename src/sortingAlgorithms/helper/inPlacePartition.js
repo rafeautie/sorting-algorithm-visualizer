@@ -20,7 +20,7 @@ export default function* partition(a, l, h) {
   return i + 1;
 }
 
-const randomize = function*(a, l, h) {
+function* randomize(a, l, h) {
   let r = Math.floor(Math.random() * (h - l + 1) + l);
   [a[h], a[r]] = [a[r], a[h]];
   yield new LineCollection(a);
