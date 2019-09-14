@@ -22,11 +22,14 @@ Shuffles `this` (the instance of the LineCollection).
 Generates rgb value based on `i`.
 
 #### Private Methods:
-`LineCollection._generateCollection()`\
+```javascript
+LineCollection._generateCollection()
+```
 Generates collection of [Line Objects](#Line).\
 *Invoked in constructor when integer is passed in.*
-
-`LineCollection._updateShuffleIdx()`\
+```javascript
+LineCollection._updateShuffleIdx()
+```
 Iterates over `this` and updates the shuffledIdx property of each [Line](#Line).\
 *Invoked in constructor when Array or LineCollection is passed in.*
 
