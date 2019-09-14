@@ -82,11 +82,11 @@ First, let me explain a key piece of how the sorting algorithms are implemented[
 *Generator functions save the day!* In short, a Generator is a function you can pause and come back to at anytime. This allowed me to implement a lazy sorting mechanism.
 
 #### The process:
-1. Get generator. *This step only happens in the constructor*
+1. Get generator. **This step only happens in the constructor**
 1. Initial `next()` call to retrieve first slice to be rerenderd.
 1. Subscribe to redux store to listen for speed changes.
-1. Dispatch new slice to redux store. *This kicks off the render.*
-1. Subsequent next invokation to retrieve next slice of the sort. *To be rerendered.*
+1. Dispatch new slice to redux store. **This kicks off the render.**
+1. Subsequent next invokation to retrieve next slice of the sort. **To be rerendered.**
 1. Invoke `_continueCycle()` with delay of `this.speed`.
 1. Rinse and repeat.
 
@@ -115,9 +115,9 @@ AlgoRunner._continueCyle()
 
 ### Requirements:
 - Every algorithm must be a [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator).
-    - Every [yield](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield) must be a `new LineCollection()`. P5 will rerender using this new LineCollection.
+    - Every [yield](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield) value must be a `new LineCollection()`. **P5 will rerender using this `new LineCollection()`.**
     - Recursive algorithms may use [yield*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*).
-    - Helper functions that perform swaps must also be Generators that yield new LineCollections.
+    - Helper functions that perform swaps must also be [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) that yield `new LineCollections()`.
 ---
 
 > ## F.A.Q
