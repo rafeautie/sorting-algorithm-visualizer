@@ -50,7 +50,7 @@ The **Line Class** represents a single line.
 
 See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/Line.js).
 
-### Public Methods:
+### Methods:
 #### recalculate(i)
 Recalculates the height, width, x and y properties of `this` (instance of Line).
 ```javascript
@@ -71,8 +71,10 @@ Line.unmark()
 
 ---
 ## AlgoRunner
-
+> Coming soon...
+---
 ## SortingAlgorithms
+> Implementing your own... coming soon...
 ---
 
 > ## F.A.Q
