@@ -13,15 +13,6 @@ class LineCollection extends Array {
     } else {
       super();
     }
-
-    this.proxyHandler = {
-      set: (lineCollection, idx, value) => {
-        lineCollection[idx] = value;
-        return value;
-      }
-    }
-
-    return new Proxy(this, this.proxyHandler);
   }
 
   shuffle() {
