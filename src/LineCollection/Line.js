@@ -19,7 +19,11 @@ export default class Line {
     this.y = (window.innerHeight) - this.height;
   }
 
-  mark(isComparing) {
-    this.isComparing = isComparing;
+  mark() {
+    this.isComparing = true;
+  }
+
+  unmark() {
+    this.isComparing = false;
   }
 }
