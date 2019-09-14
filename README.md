@@ -46,7 +46,7 @@ LineCollection._updateShuffleIdx()
 ---
 
 ## Line
-The **Line Class** represents a single line.
+The [Line Class](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/Line.js) represents a single line.
 
 See [source](https://github.com/rafeautie/sorting-algorithm-visualizer/blob/master/src/LineCollection/Line.js).
 
