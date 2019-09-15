@@ -12,6 +12,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 
 import AlgoRunner from '../AlgoRunner';
 import * as ALGOS from '../sortingAlgorithms';
+import { BugReport } from './OptionsStyle';
 
 export default ({
   setAlgo,
@@ -39,6 +40,7 @@ export default ({
 
   return (
     <Card raised={true}>
+      <BugReport onClick={() => {window.location.assign('https://github.com/rafeautie/sorting-algorithm-visualizer/issues/new/choose')}}/>
       <CardContent>
         <Typography color="textSecondary" gutterBottom>Algorithm</Typography>
 
