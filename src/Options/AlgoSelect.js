@@ -30,6 +30,7 @@ export default ({
   }
 
   let algoNames = [];
+  // eslint-disable-next-line no-unused-vars
   for (let key in ALGOS) {
     let og = key;
     let normalizedString = key.replace(/([A-Z])/g, ' $1').replace(/^./, function (str) { return str.toUpperCase(); })
