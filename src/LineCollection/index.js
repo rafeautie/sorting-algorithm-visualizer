@@ -7,11 +7,11 @@ class LineCollection extends Array {
     if (Array.isArray(input)) {
       super(...input);
       this._updateShuffleIdx()
-    } else if (Number.isInteger(input)) {
-      super();
-      this._generateCollection(input);
     } else {
       super();
+      if (input && Number.isInteger(input)) {
+        this._generateCollection(input);
+      }
     }
   }
 
@@ -45,7 +45,7 @@ class LineCollection extends Array {
   }
 
   _updateShuffleIdx() {
-    this.forEach((line, idx) => {
+    this.forEach((line, idx, arr) => {
       line.shuffledIdx = idx;
     })
     return this;
