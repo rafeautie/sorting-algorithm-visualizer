@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import {
-  toggleRunningAction,
+  forceStopAction,
   algoToRunAction,
+  toggleRunningAction,
   shuffleLineCollectionAction
 } from '../actionCreators';
 import AlgoSelect from '../../Options/AlgoSelect';
@@ -23,6 +24,10 @@ const mapDispatchToProps = dispatch => {
     },
     toggleRunning: (isRunning) => {
       dispatch(toggleRunningAction(isRunning));
+      dispatch(forceStopAction(false));
+    },
+    forceStop: () => {
+      dispatch(forceStopAction());
     }
   }
 }
