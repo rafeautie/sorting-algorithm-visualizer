@@ -7,7 +7,7 @@ export default function sketch(lines) {
 
     p.windowResized = function () {
       p.resizeCanvas(window.innerWidth, window.innerHeight);
-      drawLines()
+      drawLines();
     }
 
     const drawLines = () => {
