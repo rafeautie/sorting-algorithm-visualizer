@@ -1,18 +1,15 @@
 import React, { useRef, useEffect } from 'react';
 import { Container, Canvas } from './VisualizerStyle';
-import P5Wrapper from 'react-p5-wrapper';
-import sketch from './sketch';
 
 const Visualizer = ({ lines }) => {
-  // let s = sketch(lines);
   const canvas = useRef(null);
   const offscreen = useRef(null);
   const worker = useRef(null);
 
   useEffect(() => {
-    //FIX RESOLUTION OF CANVAS
     if (!worker.current) worker.current = new Worker('ww.js');
-
+    
+    //FIX RESOLUTION OF CANVAS
     //Hard coded dpi.
     let dpi = 2;
 
@@ -34,7 +31,7 @@ const Visualizer = ({ lines }) => {
       //Terminate Worker on will unmount.
       worker.current.terminate();
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     worker.current.postMessage({ canvas: null, lines });
@@ -43,7 +40,6 @@ const Visualizer = ({ lines }) => {
   return (
     <Container>
       <Canvas ref={canvas} />
-      {/* <P5Wrapper sketch={s} /> */}
     </Container>
   );
 }
