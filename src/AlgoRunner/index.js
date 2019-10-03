@@ -12,9 +12,12 @@ export default class AlgoRunner {
     this.algo = ALGOS[algoToRun](this.lineCollection, 0, this.lineCollection.length - 1);
     this.snapshot = this.algo.next();
     this.done = done;
+    this.didForceStop = false;
+
     this.unsubscribe = store.subscribe(() => {
-      let s = store.getState().speed
-      this.speed = 1000 - (s / 10 * 100);
+      let state = store.getState();
+      this.speed = 1000 - (state.speed / 10 * 100);
+      this.didForceStop = state.didForceStop;
     })
   }
 
@@ -23,7 +26,7 @@ export default class AlgoRunner {
   }
 
   _startCycle() {
-    if (!this.snapshot.done) {
+    if (!this.didForceStop && !this.snapshot.done) {
       store.dispatch(updateLineCollectionAction(this.snapshot.value));
       this.snapshot = this.algo.next();
       delay(this._continueCyle.bind(this), this.speed);

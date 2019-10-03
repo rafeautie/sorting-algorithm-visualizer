@@ -16,6 +16,7 @@ import { BugReport } from './OptionsStyle';
 
 export default ({
   setAlgo,
+  forceStop,
   algoToRun,
   isRunning,
   toggleRunning,
@@ -59,7 +60,12 @@ export default ({
         </FormControl>
       </CardContent>
       <CardActions>
-        <Button onClick={handleRun} disabled={isRunning} color="primary" text="sort">Sort</Button>
+        {
+          isRunning 
+          ? <Button onClick={forceStop} color="primary" text="sort">Stop</Button>
+          : <Button onClick={handleRun} color="primary" text="sort">Sort</Button>
+
+        }
         <Button onClick={shuffleLineCollection} disabled={isRunning} color="secondary" >Shuffle</Button>
         <Button onClick={toggleOptionsCard}>Options</Button>
       </CardActions>
