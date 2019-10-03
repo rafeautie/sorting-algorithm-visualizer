@@ -5,21 +5,18 @@ const Visualizer = ({ lines }) => {
   const canvas = useRef(null);
   const offscreen = useRef(null);
   const worker = useRef(null);
+  const dpi = useRef(null);
 
   useEffect(() => {
     if (!worker.current) worker.current = new Worker('ww.js');
     
     //FIX RESOLUTION OF CANVAS
     //Hard coded dpi.
-    let dpi = 2;
-
-    //GET height and width of canvas.
-    let style_height = +getComputedStyle(canvas.current).getPropertyValue("height").slice(0, -2);
-    let style_width = +getComputedStyle(canvas.current).getPropertyValue("width").slice(0, -2);
+    dpi.current = window.devicePixelRatio;
     
     //Set height and width of canvas.
-    canvas.current.setAttribute('height', style_height * dpi);
-    canvas.current.setAttribute('width', style_width * dpi);
+    canvas.current.setAttribute('height', window.innerHeight * dpi.current);
+    canvas.current.setAttribute('width', window.innerWidth * dpi.current);
 
     //Transfer canvas to offscreen.
     offscreen.current = canvas.current.transferControlToOffscreen();
@@ -34,7 +31,9 @@ const Visualizer = ({ lines }) => {
   }, []);
 
   useEffect(() => {
-    worker.current.postMessage({ canvas: null, lines });
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    worker.current.postMessage({ canvas: null, lines, width, height, dpi: dpi.current });
   });
 
   return (
