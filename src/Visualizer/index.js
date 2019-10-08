@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Container, Canvas } from './VisualizerStyle';
+import useResize from './useResize';
 
 const Visualizer = ({ lines }) => {
   const canvas = useRef(null);
@@ -7,16 +8,18 @@ const Visualizer = ({ lines }) => {
   const worker = useRef(null);
   const dpi = useRef(null);
 
+  const [height, width] = useResize();
+
   useEffect(() => {
     if (!worker.current) worker.current = new Worker('ww.js');
-    
+
     //FIX RESOLUTION OF CANVAS
     //Hard coded dpi.
     dpi.current = window.devicePixelRatio;
-    
+
     //Set height and width of canvas.
-    canvas.current.setAttribute('height', window.innerHeight * dpi.current);
-    canvas.current.setAttribute('width', window.innerWidth * dpi.current);
+    canvas.current.setAttribute('height', height * dpi.current);
+    canvas.current.setAttribute('width', width * dpi.current);
 
     //Transfer canvas to offscreen.
     offscreen.current = canvas.current.transferControlToOffscreen();
@@ -31,8 +34,6 @@ const Visualizer = ({ lines }) => {
   }, []);
 
   useEffect(() => {
-    let height = window.innerHeight;
-    let width = window.innerWidth;
     worker.current.postMessage({ canvas: null, lines, width, height, dpi: dpi.current });
   });
 
