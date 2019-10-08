@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-device-detect": "^1.9.10"
   },
   "devDependencies": {
     "@material-ui/core": "^4.4.1",
