@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 export const Container = styled.div`
   position: fixed;
@@ -9,5 +10,5 @@ export const Container = styled.div`
 
 export const Canvas = styled.canvas`
   width: 100vw;
-  height: 100vh;
+  min-height: ${isMobile ? 'calc(100vh - 56px)' : '100vh'};
 `;
