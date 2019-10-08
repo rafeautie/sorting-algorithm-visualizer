@@ -23,7 +23,7 @@ export default ({ isRunning, lineCount, updateLineCount, setNewLineCollectionBas
           value={lineCount}
           type="lines"
           min={5}
-          max={1000}
+          max={200}
         />
       </CardContent>
     </Card>
