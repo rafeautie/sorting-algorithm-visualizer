@@ -1,5 +1,5 @@
 # Sorting Algorithm Visualizer
-Built with [React](http://reactjs.org), [Redux](http://redux.js.org) and [P5](https://p5js.org/).
+Built with [React](http://reactjs.org) and [Redux](http://redux.js.org).
 
 #### Table of Contents
 1. [LineCollection](#LineCollection)
@@ -121,7 +121,7 @@ AlgoRunner._continueCyle()
 
 ### Requirements:
 - Every algorithm must be a [Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator).
-    - Every [yield](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield) value must be a `new LineCollection()`. **P5 will rerender using yielded value.**
+    - Every [yield](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield) value must be a `new LineCollection()`. **Will rerender using yielded value.**
     - Recursive algorithms may use [yield*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*).
     - Helper functions that perform swaps must also be [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) that yield `new LineCollections()`.
 ---
